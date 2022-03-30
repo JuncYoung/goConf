@@ -91,8 +91,11 @@ func InitViper(v *viper.Viper, configName string) error {
 }
 
 // InitViperConfig initializes viper config
-func InitViperConfig(v *viper.Viper, configName string, fPathFlag string) error {
-	configFile := v.GetString(fPathFlag)
+func InitViperConfig(v *viper.Viper, configName string, configFile string) error {
+	if configFile == "" {
+		configFile = v.GetString("c")
+	}
+
 	if configFile != "" {
 		viper.SetConfigFile(configFile)
 	} else {

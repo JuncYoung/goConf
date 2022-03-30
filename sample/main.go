@@ -11,8 +11,8 @@ import (
 const ProjectName = "Sample"
 
 func main() {
-	goConf.AddSearchPath("E:\\qnzs\\aiqc\\src\\goConf/sample")
-	if err := goConf.InitViperConfig(viper.GetViper(), ProjectName, "c"); err != nil {
+	goConf.AddSearchPath("E:\\qnzs\\aiqc\\src\\goConf\\sample")
+	if err := goConf.InitViperConfig(viper.GetViper(), ProjectName, ""); err != nil {
 		panic(err)
 	}
 	viper.WatchConfig()
